@@ -1,17 +1,9 @@
 <div class="container">
-<div class="brand">
-    <img
-              class="logo"
-              src="../../assets/Glass.jpg"
-              alt="Glass Logo"
-            />
-</div>
-<div class="search">
-    <a
-      class="mobile-search"
-      href="#"
-      (click)="handleMobileSearch()"
-    >
+  <div class="brand">
+    <img class="logo" src="../../assets/Glass.jpg" alt="Glass Logo" />
+  </div>
+  <div class="search">
+    <a class="mobile-search" href="#" (click)="handleMobileSearch($event)">
       <img
         src="https://res.cloudinary.com/sivadass/image/upload/v1494756966/icons/search-green.png"
         alt="search"
@@ -20,13 +12,9 @@
     <form
       [formGroup]="searchForm"
       ngClass="{mobileSearch ? 'search-form active' : 'search-form'}"
-      (ngSubmit)=handleSubmit()
+      (ngSubmit)="handleSubmit()"
     >
-      <a
-        class="back-button"
-        href="#"
-        (click)="handleSearchNav()"
-      >
+      <a class="back-button" href="#" (click)="handleSearchNav($event)">
         <img
           src="https://res.cloudinary.com/sivadass/image/upload/v1494756030/icons/back.png"
           alt="back"
@@ -39,10 +27,7 @@
         class="search-keyword"
         (change)="handleSearch()"
       />
-      <button
-        class="search-button"
-        type="submit"
-      />
+      <button class="search-button" type="submit"></button>
     </form>
   </div>
 </div>

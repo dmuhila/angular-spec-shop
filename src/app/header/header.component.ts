@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   mobileSearch: boolean;
+  searchForm: FormGroup;
   constructor() {}
 
   ngOnInit(): void {}
 
-  handleSubmit(e) {
+  handleSubmit() {
+    var e: Event;
     e.preventDefault();
   }
 
@@ -24,7 +27,9 @@ export class HeaderComponent implements OnInit {
     e.preventDefault();
     this.mobileSearch = false;
 
-    this.searchBox.value = '';
+    //this.searchBox.value = '';
     this.handleMobileSearch(e);
   }
+
+  handleSearch() {}
 }
